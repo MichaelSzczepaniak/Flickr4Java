@@ -352,6 +352,7 @@ public class REST extends Transport {
         if (flickrMethod.isPresent()) {
             String filename = String.format("%s.xml", flickrMethod.get());
             Path filePath = Paths.get("src/test/resources/payloads/" + verb, filename);
+            // FIXME add encoding, bug #8
             Files.write(filePath, strXml.getBytes());
             logger.info(String.format("Writing payload to file '%s'", filePath));
         } else {
