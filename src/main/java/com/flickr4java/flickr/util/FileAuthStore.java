@@ -17,6 +17,9 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 
  * Implements a filesystem based storage system for Auth instances. One ".auth" file is maintained per Auth instance stored.
@@ -25,7 +28,7 @@ import java.util.Map;
  * 
  */
 public class FileAuthStore implements AuthStore {
-
+    private static Logger logger = LoggerFactory.getLogger(FileAuthStore.class);
     private Map<String, Auth> auths;
     private Map<String, Auth> authsByUser; // Separate HashMap due to retrieveAll.
 
@@ -37,9 +40,13 @@ public class FileAuthStore implements AuthStore {
 
         this.authStoreDir = authStoreDir;
 
-        // TODO add check that dir was properly created, bug #10
-        if (!authStoreDir.exists())
-            authStoreDir.mkdir();
+        if (!authStoreDir.exists()) {
+            // SpotBugs Issue 10
+            if (!authStoreDir.mkdir()) {
+                logger.error("Creation of authStoreDir failed!");
+            }
+        }
+
 
         if (!authStoreDir.canRead()) {
             try {
@@ -108,10 +115,12 @@ public class FileAuthStore implements AuthStore {
      */
     public Auth retrieve(String nsid) {
     	Auth auth =  this.auths.get(nsid);
-    	if(auth != null)
-    		return auth;
-    	else
+    	if(auth != null) {
+            return auth;
+        }
+    	else {
     		return this.authsByUser.get(nsid);
+        }
     }
 
     /*

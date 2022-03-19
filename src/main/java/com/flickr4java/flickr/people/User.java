@@ -52,7 +52,7 @@ public class User implements Serializable, BuddyIconable {
     private String realName;
 
     private String location;
-    
+
     private TimeZone timeZone;
 
     private Date photosFirstDate;
