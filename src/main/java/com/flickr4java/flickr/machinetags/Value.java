@@ -17,7 +17,7 @@ public class Value {
 
     String predicate;
 
-    Date firstAdded;
+//    Date firstAdded;  // Issue 3
 
     Date lastAdded;
 
@@ -49,21 +49,6 @@ public class Value {
         this.predicate = predicate;
     }
 
-    public void setFirstAdded(Date date) {
-        firstAdded = date;
-    }
-
-    public void setFirstAdded(long datePosted) {
-        setFirstAdded(new Date(datePosted));
-    }
-
-    public void setFirstAdded(String timestamp) {
-        if (timestamp == null || "".equals(timestamp))
-            return;
-        setFirstAdded(Long.parseLong(timestamp) * 1000);
-    }
-
-    // TODO This is never used, bug #3
     public void setLastAdded(Date date) {
         lastAdded = date;
     }

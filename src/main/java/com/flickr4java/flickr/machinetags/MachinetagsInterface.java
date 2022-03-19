@@ -497,7 +497,6 @@ public class MachinetagsInterface {
         value.setUsage(nsElement.getAttribute("usage"));
         value.setNamespace(nsElement.getAttribute("namespace"));
         value.setPredicate(nsElement.getAttribute("predicate"));
-        value.setFirstAdded(nsElement.getAttribute("first_added"));
         value.setLastAdded(nsElement.getAttribute("last_added"));
         value.setValue(XMLUtilities.getValue(nsElement));
         return value;
