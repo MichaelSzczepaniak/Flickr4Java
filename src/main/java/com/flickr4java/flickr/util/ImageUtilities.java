@@ -54,7 +54,7 @@ public class ImageUtilities {
             }
         }
     }
-    
+
     private static class ImageLoadStatus {
         public boolean widthDone = false;
 

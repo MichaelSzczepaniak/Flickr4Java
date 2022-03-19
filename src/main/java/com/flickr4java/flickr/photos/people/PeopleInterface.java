@@ -153,26 +153,7 @@ public class PeopleInterface {
         pt.setTotal(Integer.parseInt(usersElement.getAttribute("total")));
         pt.setHeight(Integer.parseInt(usersElement.getAttribute("photo_height")));
         pt.setWidth(Integer.parseInt(usersElement.getAttribute("photo_width")));
-        NodeList usernodes = usersElement.getElementsByTagName("person");
-        for (int i = 0; i < usernodes.getLength(); i++) {
-            Element userElement = (Element) usernodes.item(i);
 
-            // TODO create unused variable repeatedly, bug #5
-            PersonTag user = new PersonTag();
-            user.setId(userElement.getAttribute("nsid"));
-            user.setUsername(userElement.getAttribute("username"));
-            user.setIconFarm(Integer.parseInt(userElement.getAttribute("iconfarm")));
-            user.setIconServer(Integer.parseInt(userElement.getAttribute("iconserver")));
-            user.setRealName(userElement.getAttribute("realname"));
-            user.setAddedById(userElement.getAttribute("added_by"));
-            user.setPathAlias(userElement.getAttribute("path_alias"));
-            if(!userElement.getAttribute("x").equals("")){
-	            user.setX(Integer.parseInt(userElement.getAttribute("x")));
-	            user.setY(Integer.parseInt(userElement.getAttribute("y")));
-	            user.setW(Integer.parseInt(userElement.getAttribute("w")));
-	            user.setH(Integer.parseInt(userElement.getAttribute("h")));
-            }
-        }
         return pt;
 
     }
