@@ -157,6 +157,7 @@ public class PeopleInterface {
         for (int i = 0; i < usernodes.getLength(); i++) {
             Element userElement = (Element) usernodes.item(i);
 
+            // TODO create unused variable repeatedly, bug #5
             PersonTag user = new PersonTag();
             user.setId(userElement.getAttribute("nsid"));
             user.setUsername(userElement.getAttribute("username"));
