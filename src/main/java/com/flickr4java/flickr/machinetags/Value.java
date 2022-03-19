@@ -63,6 +63,7 @@ public class Value {
         setFirstAdded(Long.parseLong(timestamp) * 1000);
     }
 
+    // TODO This is never used, bug #3
     public void setLastAdded(Date date) {
         lastAdded = date;
     }
