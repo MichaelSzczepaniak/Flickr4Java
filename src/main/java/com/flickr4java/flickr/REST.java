@@ -353,8 +353,7 @@ public class REST extends Transport {
         if (flickrMethod.isPresent()) {
             String filename = String.format("%s.xml", flickrMethod.get());
             Path filePath = Paths.get("src/test/resources/payloads/" + verb, filename);
-            // FIXME add encoding, bug #8
-            Files.write(filePath, strXml.getBytes());
+            Files.write(filePath, strXml.getBytes("UTF-16"));
             logger.info(String.format("Writing payload to file '%s'", filePath));
         } else {
             logger.warn("Not dumping response to file as method not found in request for URL {}", request.getUrl());
