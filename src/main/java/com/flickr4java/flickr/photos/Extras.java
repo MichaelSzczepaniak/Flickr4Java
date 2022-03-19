@@ -72,6 +72,7 @@ public class Extras {
      * @see com.flickr4java.flickr.interestingness.InterestingnessInterface#getList(java.util.Date, Set, int, int)
      * @see com.flickr4java.flickr.favorites.FavoritesInterface#getList(String, int, int, Set)
      */
+    // FIXME wrap as a mutable collection, bug #2
     public static final Set<String> ALL_EXTRAS = new HashSet<String>();
 
     /**
