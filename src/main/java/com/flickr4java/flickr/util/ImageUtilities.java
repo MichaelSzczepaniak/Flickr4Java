@@ -54,10 +54,8 @@ public class ImageUtilities {
             }
         }
     }
-
-    // FIX ME Changed the scope of from class to private static class, bug #4
-    class ImageLoadStatus {
-
+    
+    private static class ImageLoadStatus {
         public boolean widthDone = false;
 
         public boolean heightDone = false;
