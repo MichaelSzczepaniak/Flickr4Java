@@ -33,8 +33,7 @@ public class UrlUtilities {
      */
     @Deprecated
     public static URL buildUrl(String host, int port, String path, Map<String, String> parameters) throws MalformedURLException {
-        // HACK deprecated method, call recommended method from within this one, bug #7
-        return buildUrl("http", port, path, parameters);
+        return buildSecureUrl("http", port, path, parameters);
     }
     
     /**
