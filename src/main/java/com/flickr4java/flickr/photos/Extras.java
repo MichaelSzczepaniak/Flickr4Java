@@ -1,6 +1,7 @@
 
 package com.flickr4java.flickr.photos;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -72,8 +73,8 @@ public class Extras {
      * @see com.flickr4java.flickr.interestingness.InterestingnessInterface#getList(java.util.Date, Set, int, int)
      * @see com.flickr4java.flickr.favorites.FavoritesInterface#getList(String, int, int, Set)
      */
-    // FIXME wrap as a mutable collection, bug #2
-    public static final Set<String> ALL_EXTRAS = new HashSet<String>();
+    //public static final Set<String> ALL_EXTRAS = new HashSet<String>();     // Issue 2
+    protected static final Set<String> ALL_EXTRAS_INIT = new HashSet<>();  // Issue 2, FIX
 
     /**
      * Minimal Set of extra-arguments. Used by convenience-methods that request lists of photos.
@@ -92,35 +93,39 @@ public class Extras {
      * @see com.flickr4java.flickr.interestingness.InterestingnessInterface#getList(java.util.Date, Set, int, int)
      * @see com.flickr4java.flickr.favorites.FavoritesInterface#getList(String, int, int, Set)
      */
-    public static final Set<String> MIN_EXTRAS = new HashSet<String>();
+    protected static final Set<String> MIN_EXTRAS_INIT = new HashSet<>();
 
     static {
-        ALL_EXTRAS.add(DATE_TAKEN);
-        ALL_EXTRAS.add(DATE_UPLOAD);
-        ALL_EXTRAS.add(ICON_SERVER);
-        ALL_EXTRAS.add(LAST_UPDATE);
-        ALL_EXTRAS.add(LICENSE);
-        ALL_EXTRAS.add(ORIGINAL_FORMAT);
-        ALL_EXTRAS.add(OWNER_NAME);
-        ALL_EXTRAS.add(GEO);
-        ALL_EXTRAS.add(TAGS);
-        ALL_EXTRAS.add(MACHINE_TAGS);
-        ALL_EXTRAS.add(O_DIMS);
-        ALL_EXTRAS.add(MEDIA);
-        ALL_EXTRAS.add(VIEWS);
-        ALL_EXTRAS.add(PATH_ALIAS);
-        ALL_EXTRAS.add(URL_S);
-        ALL_EXTRAS.add(URL_SQ);
-        ALL_EXTRAS.add(URL_T);
-        ALL_EXTRAS.add(URL_M);
-        ALL_EXTRAS.add(URL_O);
-        ALL_EXTRAS.add(URL_L);
+        ALL_EXTRAS_INIT.add(DATE_TAKEN);
+        ALL_EXTRAS_INIT.add(DATE_UPLOAD);
+        ALL_EXTRAS_INIT.add(ICON_SERVER);
+        ALL_EXTRAS_INIT.add(LAST_UPDATE);
+        ALL_EXTRAS_INIT.add(LICENSE);
+        ALL_EXTRAS_INIT.add(ORIGINAL_FORMAT);
+        ALL_EXTRAS_INIT.add(OWNER_NAME);
+        ALL_EXTRAS_INIT.add(GEO);
+        ALL_EXTRAS_INIT.add(TAGS);
+        ALL_EXTRAS_INIT.add(MACHINE_TAGS);
+        ALL_EXTRAS_INIT.add(O_DIMS);
+        ALL_EXTRAS_INIT.add(MEDIA);
+        ALL_EXTRAS_INIT.add(VIEWS);
+        ALL_EXTRAS_INIT.add(PATH_ALIAS);
+        ALL_EXTRAS_INIT.add(URL_S);
+        ALL_EXTRAS_INIT.add(URL_SQ);
+        ALL_EXTRAS_INIT.add(URL_T);
+        ALL_EXTRAS_INIT.add(URL_M);
+        ALL_EXTRAS_INIT.add(URL_O);
+        ALL_EXTRAS_INIT.add(URL_L);
     }
 
+    public static final Set<String> ALL_EXTRAS = Collections.unmodifiableSet(ALL_EXTRAS_INIT);
+
     static {
-        MIN_EXTRAS.add(ORIGINAL_FORMAT);
-        MIN_EXTRAS.add(OWNER_NAME);
+        MIN_EXTRAS_INIT.add(ORIGINAL_FORMAT);
+        MIN_EXTRAS_INIT.add(OWNER_NAME);
     }
+
+    public static final Set<String> MIN_EXTRAS = Collections.unmodifiableSet(MIN_EXTRAS_INIT);
 
     /**
      * No-op constructor.
