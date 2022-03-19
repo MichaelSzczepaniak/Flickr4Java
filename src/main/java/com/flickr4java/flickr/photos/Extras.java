@@ -73,8 +73,7 @@ public class Extras {
      * @see com.flickr4java.flickr.interestingness.InterestingnessInterface#getList(java.util.Date, Set, int, int)
      * @see com.flickr4java.flickr.favorites.FavoritesInterface#getList(String, int, int, Set)
      */
-    //public static final Set<String> ALL_EXTRAS = new HashSet<String>();     // Issue 2
-    protected static final Set<String> ALL_EXTRAS_INIT = new HashSet<>();  // Issue 2, FIX
+    protected static final Set<String> ALL_EXTRAS_INIT = new HashSet<>();
 
     /**
      * Minimal Set of extra-arguments. Used by convenience-methods that request lists of photos.
