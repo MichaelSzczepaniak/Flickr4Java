@@ -92,6 +92,7 @@ public class SearchParameters {
     };
 
     /** order argument */
+    // TODO make this final, bug #1
     public static int DATE_POSTED_DESC = 0;
 
     /** order argument */
