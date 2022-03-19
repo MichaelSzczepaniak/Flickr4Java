@@ -37,6 +37,7 @@ public class FileAuthStore implements AuthStore {
 
         this.authStoreDir = authStoreDir;
 
+        // TODO add check that dir was properly created, bug #10
         if (!authStoreDir.exists())
             authStoreDir.mkdir();
 
