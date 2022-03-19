@@ -52,8 +52,7 @@ public class User implements Serializable, BuddyIconable {
     private String realName;
 
     private String location;
-
-    // TODO should implement serialzable, bug #9
+    
     private TimeZone timeZone;
 
     private Date photosFirstDate;

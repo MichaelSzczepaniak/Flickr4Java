@@ -1,7 +1,8 @@
 package com.flickr4java.flickr.people;
 
-public class TimeZone {
+import java.io.Serializable;
 
+public class TimeZone implements Serializable {
     private String label;
 
     private String offset;
